@@ -1,0 +1,64 @@
+<!--<div class='card'>
+    <form (ngSubmit)="editEmployee()">
+<div class='card-header'>
+ Edit Employee
+</div>
+<div class='card-body'>            
+  <div class='table-responsive'>
+    <table class='table'>       
+    
+      <tbody>  
+    
+              <tr>
+                <td><label>name</label></td>
+                <td><input type="text" name="e_name" [(ngModel)]="employeeItem.name"/></td>                  
+              </tr>  
+              <tr>
+                <td> <label>email</label></td>
+                <td><input type="text" name="e_email" [(ngModel)]="employeeItem.email"/></td>                  
+              </tr>  
+              <tr>
+                <td> <label>qualification</label></td>
+                <td><input type="text" name="e_qualification" [(ngModel)]="employeeItem.qualification"/></td>                  
+              </tr>  
+            
+              <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>                  
+              </tr>             
+      </tbody>
+    </table>
+  </div>
+</div>
+</form>
+</div>-->
+
+
+<div class="heading" ><h2>Update Employer Details</h2></div><br>
+<div class="container bg-light">
+    <div class="employerform">
+    <form class="form col-md-12"#useremployerform="ngForm" (ngSubmit)="editEmployer()"> 
+        <div class="container">
+            <div class="col">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="">Name<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" name="fname" id="fname" #fname="ngModel" [(ngModel)]="employerItem.fname" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required>
+                        <label for="error" class="text-danger" *ngIf="fname.touched && fname.invalid">Invalid Format</label>
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="inputEmail4">Email<span style="color:red">*</span></label>
+                          <input type="email" class="form-control" name="email" id="email"  #email="ngModel" [(ngModel)]="employerItem.email" pattern="^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+)[.]([a-z]{2,3})(.[a-z]{2,3})?$" required>
+                          <label for="error" class="text-danger" *ngIf="email.touched && email.invalid" >Invalid Email</label>
+                      </div>         
+                      <div class="form-group col-md-12">
+                        <label for="">Qualification<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" id="quali" name="quali"  #quali="ngModel" [(ngModel)]="employerItem.quali" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required>
+                        <label for="error" class="text-danger" *ngIf="quali.touched && quali.invalid" >Invalid</label><br>
+                    </div> 
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="size:10vh;" [disabled]="useremployerform.form.invalid">Submit</button><br>
+                    
+                  
+                  </div>
+                  </div>

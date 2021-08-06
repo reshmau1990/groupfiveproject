@@ -1,0 +1,21 @@
+<div class="login">
+    <h2 class="login-header">
+        LogIn
+    </h2>
+    <form class="form col-md-6" class="login-container" #userlogin="ngForm" (ngSubmit)="loginuser()">
+        <p>
+            <input type="email" name="email" class="form-control" #email="ngModel" id="email" [(ngModel)]="user.email" pattern="^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+)[.]([a-z]{2,3})(.[a-z]{2,3})?$" placeholder="email@example.com" required />
+            <label for="error" class="text-danger" *ngIf="email.touched && email.invalid" >Invalid Email</label><br>
+        </p>
+        <p>
+            <input type="password" name="password" class="form-control" #password="ngModel" [(ngModel)]="user.password" id="inputpassword" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$" required />
+            <label for="error" class="text-danger" *ngIf="password.touched && password.invalid">Invalid Password</label><br>
+        </p>
+        <p>
+            <center><button [disabled]="userlogin.form.invalid">Submit</button></center>
+        </p>
+        <p>
+            <center><a routerLink="/signup">New User</a></center>
+        </p>
+    </form>
+</div>

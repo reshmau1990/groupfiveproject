@@ -1,0 +1,65 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgb(1, 53, 105);
+    height: 60vh;
+
+}
+.footcontent{
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: red; */
+    height: 40vh;
+    width: 90%;
+}
+
+.footdivision{
+    width: 20vw;
+    height: 20vh;
+    /* background-color: blue; */
+
+}
+
+.footer .head1{
+    font-family: 'Domine', serif;
+    height:5vh;
+    color: ghostwhite;
+    font-size: 1.25rem;
+    padding: 6px 5px;
+}
+.footer .headcontent{
+    padding: 5px 10px 0px 5px ;
+    margin-top: 1px;
+    font-size: 1em;
+    font-family: 'Dosis', sans-serif;
+    color: rgb(186, 190, 186);
+}
+.footerlogo
+{
+    background-color: rgb(1, 53, 105);
+    border-bottom: 1px solid gainsboro; 
+    border-top: 1px solid gainsboro; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 15vh;
+}
+.footerlogo .container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+.footerlogo .container .socialmedia{
+    margin-top: 1vh;
+    margin-left: 2vw;
+}
+.copyright{
+    background-color: rgb(1, 53, 105);
+    color: honeydew;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

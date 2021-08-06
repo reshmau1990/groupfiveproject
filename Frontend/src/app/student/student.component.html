@@ -1,0 +1,79 @@
+<div id="masthead">  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+               <h1>{{pageTitle}}
+                 <p class="lead"></p>
+               </h1>
+            </div>          
+          <div class="col-md-5">
+            <div class="well well-lg"> 
+              <div class="row">
+                <div class="col-sm-12">
+                  <div>
+                    <button class="btn btn-warning" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="approveStudent(student)">Approve</button> &nbsp;&nbsp;
+                    <button class="btn btn-danger" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="removeStudent(student)">Reject</button>
+                  </div>
+                  <br>  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+  </div><!-- /cont -->
+  
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+    
+  
+  
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">         
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row">    
+                       <br>
+                        <div class="col-md-2 col-sm-3 text-center">
+                            <img
+                            [src] = 'student.photo' 
+                            [fname] = 'student.fname'
+                            [style.width.px] = 'imageWidth' 
+                            [style.margin.px] = 'imageMargin'>
+                        </div>
+                        <div class="col-md-10 col-sm-9">
+                           <b><p>Name : {{student.fname}}</p></b>
+                            <div class="row">
+                                <div class="col-xs-9">
+                                    <p><span class="label label-default">Age : {{student.age}}</span></p>
+                                    <p><span class="label label-default">Address : {{student.address}}</span></p>
+                                    <p><span class="label label-default">District : {{student.district}}</span></p>
+                                    <p><span class="label label-default">Email : {{student.email}}</span></p>
+                                    <p><span class="label label-default">Contact No.  : {{student.phno}}</span></p>
+                                    <p><span class="label label-default">Date of birth : {{student.dob}}</span></p>
+                                    <p><span class="label label-default">Educational Qualification : {{student.quali}}</span></p>
+                                    <p><span class="label label-default">Pass out year : {{student.poy}}</span></p>
+                                    <p><span class="label label-default">Skill : {{student.skill}}</span></p>
+                                    <p><span class="label label-default">Working Status : {{student.wstatus}}</span></p>
+                                    <p><span class="label label-default">Technical tarining : {{student.techtrain}}</span></p>
+                                    <p><span class="label label-default">Course to join : {{student.course}}</span></p>
+                                </div>
+                                           <br><br>
+                            </div>
+                        </div>
+                        <hr>     
+                    </div>
+                </div>
+            </div><!--/col-12-->
+        </div>
+    </div>

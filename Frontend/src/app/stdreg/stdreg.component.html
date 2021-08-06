@@ -1,0 +1,26 @@
+<!-- <h3>List of students waiting for aproval</h3> -->
+<div class='card'>
+  <div class='card-header'>
+    <h1><b>List of students registered</b></h1>
+   </div>
+
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'
+              *ngIf = 'students && students.length'>
+          <thead>
+            <tr>
+              <th></th>
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let student of students'>
+                  <td>{{ student.fname }}</td>
+              </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

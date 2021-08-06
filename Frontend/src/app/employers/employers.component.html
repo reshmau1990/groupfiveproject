@@ -1,0 +1,41 @@
+<div class='card'>
+    <div class='card-header'>
+     <h1><b>{{pageTitle}}</b></h1>
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'
+              *ngIf = 'employers && employers.length'>
+          <thead>
+    
+            <!-- <button class="btn btn-primary" style="cursor:pointer" (click)="newUser()" > Add</button>                     -->
+            <!-- <a class="add" routerLink="newEmployer" routerLinkActive="active"><b>Add New User</b></a> -->
+            <tr>
+              
+
+              <th>Name</th>
+              <th>Email</th>
+              <th>Qualification</th>
+              
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let employer of employers'>
+                  
+                  <td>{{ employer.fname }}</td>
+                  <td>{{ employer.email }}</td>
+                  <td>{{ employer.quali }}</td>
+                  
+                
+                  <td>
+                    <button class="btn btn-warning" style="cursor:pointer"   (click)="editEmployer(employer)" style="margin-left: 10px;"> Edit</button>
+                    <button class="btn btn-secondary" style="cursor:pointer" (click)="deleteEmployer(employer)"style="margin-left: 10px;"> Delete</button>
+                  </td>
+                </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

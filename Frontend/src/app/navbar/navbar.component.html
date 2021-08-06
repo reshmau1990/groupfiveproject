@@ -1,0 +1,18 @@
+<nav *ngIf="nav.visible" class="navbar navbar-expand-md ">
+    <div class="container">
+        <!-- <a class="navbar-brand" href="home.html"> -->
+            <img src="assets/images/download.png" alt="" width="50px" height="50px" class="d-inline-block align-text-top"> &nbsp;&nbsp;&nbsp;
+            
+            <h2>ICT Academy of Kerala</h2>
+            <!-- </a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar" style="margin-left: 45vw;">
+            <ul class="navbar-nav">
+                <li class="nav-item" style="float:right"><a routerLink="/home" (click)="logoutUser()" routerLinkActive="active">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+

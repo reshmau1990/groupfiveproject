@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+.formcontent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.forms{
+    margin-top: 50px;
+    width: 30vw;
+    height: 60vh;
+    border: 1px solid beige;
+    background-color: rgb(241, 233, 233);
+
+}
+.forms input{
+    width: 25vw;
+    margin-left: 2vw;
+}
+.forms label{
+    margin-left: 2vw;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+.forms .layouts{
+    
+    height: 6ovh;
+    width: 30vw;
+    margin-top: 5vh;
+}
+.forms .layouts button{
+    margin-left: 11vw;
+    margin-top: 10px;
+}
+.layouts button a{
+    text-decoration: none;
+    color:white;
+}

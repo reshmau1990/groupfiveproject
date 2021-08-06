@@ -1,0 +1,32 @@
+.navbar{
+  background-color: rgb(1, 53, 105);
+  color: ivory;
+}
+.navbar a{
+  text-decoration: none;
+  color: ivory;
+}
+
+.navbar-brand {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}

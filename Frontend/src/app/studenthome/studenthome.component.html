@@ -1,0 +1,60 @@
+
+
+<div class="main">
+       <div class="left">
+        <center><p> <img src="/assets/img/avatar5.png" alt="HelPic" class="img-responsive" width="50" height="50" class="rounded-circle" style="opacity: .8">
+         &nbsp;&nbsp;<span style="color: white;">Welcome</span> <br><br></p></center>
+         
+     
+         <nav class="mt-2">
+           <ul  data-widget="treeview" role="menu" data-accordion="false" style="color: white;">
+             <!-- Add icons to the links using the .nav-icon class
+                  with font-awesome or any other icon font library -->
+             <li class="nav-item has-treeview menu-open">
+               <a routerLink="stdhome" class="nav-link active">
+                 <i class="nav-icon fas fa-tachometer-alt"></i>
+                 <p>
+                   Home
+                   <!-- <i class="right fas fa-angle-left"></i> -->
+                 </p>
+               </a>
+               
+             </li>
+             <li class="nav-item">
+               <a routerLink="stdhome/stdform" class="nav-link">
+                 <i class="nav-icon fas fa-th"></i>
+                 <p>
+                   Enrollment Form
+                   <span class="right badge badge-danger"></span>
+                 </p>
+               </a>
+             </li>
+
+               <li class="nav-item has-treeview">
+                <a routerLink="stdhome/fee-payment" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Fee Payment
+                    <!-- <i class="fas fa-angle-left right"></i> -->
+                    <span class="badge badge-info right"></span>
+                  </p>
+                </a>
+                </li>
+              
+           </ul>
+         </nav>
+     
+       </div>
+     
+       
+     
+       <div class="right">  
+              <router-outlet></router-outlet>
+       </div>
+     
+     </div>
+     
+     
+     
+
+

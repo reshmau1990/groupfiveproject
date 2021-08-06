@@ -1,0 +1,127 @@
+<div class="heading"><h1>Update Student Details</h1></div><br>
+<div class="container bg-light">
+    <div class="studentform">
+    <form class="form col-md-12"#userenrollmentform="ngForm" (ngSubmit)="editStudent()"> 
+        <div class="container">
+            <div class="col">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Full Name<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" name="fname" id="fname" #fname="ngModel" [(ngModel)]="studentItem.fname" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required>
+                        <label for="error" class="text-danger" *ngIf="fname.touched && fname.invalid">Invalid Format</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Age<span style="color:red">*</span></label>
+                        <input type="number" class="form-control" name="age" id="age" #age="ngModel" [(ngModel)]="studentItem.age" pattern="^\d{2}$" required>
+                        <label for="error" class="text-danger" *ngIf="age.touched && age.invalid" >Invalid Age</label>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress">Address<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" name="address" id="address" #address="ngModel" [(ngModel)]="studentItem.address" pattern="^[a-zA-Z0-9\s,/'-]*$" required>
+                        <label for="error" class="text-danger" *ngIf="address.touched && address.invalid" >Invalid Address</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">District<span style="color:red">*</span></label>
+                        <select id="district" name= "district" class="form-control" #district="ngModel" [(ngModel)]="studentItem.district" required>
+                            <option selected>Choose</option>
+                            <option>Alappuzha</option>
+                            <option>Ernakulam</option>
+                            <option>Idukki</option>
+                            <option>Kannur</option>
+                            <option>Kasargod</option>
+                            <option>Kollam</option>
+                            <option>Kottayam</option>
+                            <option>Kozhikode</option>
+                            <option>Malappuram</option>
+                            <option>Palakkad</option>
+                            <option>Pathanamthitta</option>
+                            <option>Thiruvananthapuram</option>
+                            <option>Thrissur</option>
+                            <option>Wayanad</option>
+                        </select>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email<span style="color:red">*</span></label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="enter your registered email-id" #email="ngModel" [(ngModel)]="studentItem.email" pattern="^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+)[.]([a-z]{2,3})(.[a-z]{2,3})?$" required>
+                        <label for="error" class="text-danger" *ngIf="email.touched && email.invalid" >Invalid Email</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Mobile No:<span style="color:red">*</span></label>
+                        <input type="number" class="form-control" id="phno" name="phno" #phno="ngModel" [(ngModel)]="studentItem.phno" pattern="^([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" required>
+                        <label for="error" class="text-danger" *ngIf="phno.touched && phno.invalid" >Invalid Phone number</label>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Date of Birth<span style="color:red">*</span></label>
+                        <input type="date" class="form-control" id="dob" name="dob" #dob="ngModel" [(ngModel)]="studentItem.dob" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Gender<span style="color:red">*</span></label>
+                        <select id="gender" name="gender" class="form-control" #gender="ngModel" [(ngModel)]="studentItem.gender" required>
+                            <option selected>Choose</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Highest Qualification<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" id="quali" name="quali"  #quali="ngModel" [(ngModel)]="studentItem.quali" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required>
+                        <label for="error" class="text-danger" *ngIf="quali.touched && quali.invalid" >Invalid</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Pass out Year<span style="color:red">*</span></label>
+                        <input type="number" class="form-control" id="poy" name="poy"  #poy="ngModel" [(ngModel)]="studentItem.poy" pattern="^(19|20)\d{2}$" required>
+                        <label for="error" class="text-danger" *ngIf="poy.touched && poy.invalid" >Invalid</label>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Skill Set<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" id="skill" name="skill"  #skill="ngModel" [(ngModel)]="studentItem.skill" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required>
+                        <label for="error" class="text-danger" *ngIf="skill.touched && skill.invalid" >Invalid</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Employment Status<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" id="wstatus" name="wstatus"  #wstatus="ngModel" [(ngModel)]="studentItem.wstatus" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required>
+                        <label for="error" class="text-danger" *ngIf="wstatus.touched && wstatus.invalid" >Invalid</label>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Technology Training<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" id="techtrain" name="techtrain" #techtrain="ngModel" [(ngModel)]="studentItem.techtrain" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required>
+                        <label for="error" class="text-danger" *ngIf="techtrain.touched && techtrain.invalid" >Invalid</label><br>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Year<span style="color:red">*</span></label>
+                        <input type="number" class="form-control" id="year" name="year" #year="ngModel" [(ngModel)]="studentItem.year" pattern="^(19|20)\d{2}$" required>
+                        <label for="error" class="text-danger" *ngIf="year.touched && year.invalid" >Invalid</label>
+                    </div>
+                    <br>
+                    <div class="form-group col-md-6">
+                        <label for="">Course<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" id="course" name="course" #course="ngModel" [(ngModel)]="studentItem.course" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required>
+                        <label for="error" class="text-danger" *ngIf="course.touched && course.invalid" >Invalid Course</label>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <label for="">Photo<span style="color:red">*</span></label>
+                    <input type="file" name="photo" id="photo" #photo="ngModel" [(ngModel)]="studentItem.photo" accept= "image/*" required>
+                </div><br>
+                <button type="submit" class="btn btn-primary" [disabled]="userenrollmentform.form.invalid">Submit</button><br>
+            </div>
+        </div>
+    </form><br>
+</div>
+</div>
+
+

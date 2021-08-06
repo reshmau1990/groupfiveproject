@@ -1,0 +1,55 @@
+<div class='card'>
+    <div class='card-header'>
+     <h1><b>{{pageTitle}}</b></h1>
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'
+              *ngIf = 'students && students.length'>
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Highest Qualification</th>
+              <th>Pass Out Year</th>
+              <th>Skill Set</th>
+              <th>Course</th>
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let student of students'>
+                <td><img
+                  [src] = 'student.photo' 
+                
+                  [style.width.px] = 'imageWidth' 
+                  [style.margin.px] = 'imageMargin'></td>
+                  <td>{{ student.fname }}</td>
+                  <td>{{ student.email }}</td>
+                  <td>{{ student.quali }}</td>
+                  <td>{{student.poy}}</td>
+                  <td>{{student.skill}}</td>
+                  <td>{{student.course}}</td>
+                  
+                  <td>
+                    <!-- <button class="btn btn-primary" style="cursor:pointer" *ngIf="_auth.loggedIn()" routerLink=""  style="margin-left: 0px;">More Details</button>&nbsp;&nbsp; -->
+                    
+                    <button class="btn btn-warning" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="editStudent(student)">EDIT</button>&nbsp;&nbsp;
+                  </td>
+                  <td>
+                    <button class="btn btn-danger" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="deleteStudent(student)" >DELETE</button><br>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger" style="cursor:pointer"  (click)="getStudent(student)" >View</button><br>
+
+                  </td>
+                </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+
