@@ -13,7 +13,6 @@ export interface ISignup{
          wstatus:string,
          techtrain:string,
          year:string,
-         course:string,
-         photo:string
+         course:string
  }
  

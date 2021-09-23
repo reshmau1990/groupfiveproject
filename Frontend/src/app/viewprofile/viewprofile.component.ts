@@ -29,13 +29,11 @@ export class ViewprofileComponent implements OnInit {
     techtrain:'',
     year:'',
     course:'',
-    photo:'',
     value:''
   };
 
   pageTitle: string = 'STUDENT PROFILE';
-  imageWidth: number = 50;
-  imageMargin: number = 2;
+
 
   students=[{
     fname:'',
@@ -53,7 +51,6 @@ export class ViewprofileComponent implements OnInit {
     techtrain:'',
     year:'',
     course:'',
-    photo:'',
     value:''}];
 
     userId:any;

@@ -15,21 +15,9 @@ const { db } = require('./src/model/EmployerData');
 var app = new express();
 app.use(cors());
 app.use(bodyparser.json());
-email='admn4928@gmail.com';
-password='Admin@123';
+// email='admn4928@gmail.com';
+// password='Admin@123';
 const multer = require('multer');
-
-const storage = multer.diskStorage({
-  destination: function(req, file, callback) {
-    callback(null, './public/images');
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname) 
-  }
- 
-});
-
-var upload = multer({ storage: storage });
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -50,31 +38,31 @@ function verifyToken(req, res, next) {
 }
 
 app.post('/login', (req, res) => {
-  let user = req.body;
-
-  if(email){
-    if(password==user.password){
-        let payload = {subject: email+password}
-        let token = jwt.sign(payload, 'secretKey')
-        res.status(200).send({token})
-    }
-    else{
+  let user = req.body;   
 
       EmployerData.findOne({email: user.email, password: user.password}, function(err, item){
+
         if(err){
              res.status(401).send('Invalid credentials');
         }
         if(item){
-            console.log(item)
-             res.send(item);
+
+          let user = {
+            email: req.body.email,
+            password: req.body.password
+          }
+
+            let payload = {subject: user.email+user.password}
+            let token = jwt.sign(payload, 'secretKey')
+            res.status(200).send({token})
+            // console.log(item)
+            // res.send(item);
         }
         else{
           res.status(401).send('Invalid');
         }
 
       })
-    }
-  }
 })
 
 app.post('/studentlogin', (req, res) => {
@@ -165,7 +153,7 @@ else{
 })
 })
 
-app.post('/stdform/insert', upload.single('image'), (req,res)=>{
+app.post('/stdform/insert', (req,res)=>{
   
 
    var item = {
@@ -185,13 +173,13 @@ app.post('/stdform/insert', upload.single('image'), (req,res)=>{
     year:req.body.item.year,
     course:req.body.item.course
 }
-if(req.file){
+// if(req.file){
 
-  item.photo = req.file.originalname
-}
-else{
-  item.photo = req.body.item.photo;
-}
+//   item.photo = req.file.originalname
+// }
+// else{
+//   item.photo = req.body.item.photo;
+// }
 
 StudentRegisterData.findOne({email:item.email, fname: item.fname}, function(err,item){
   
@@ -219,13 +207,13 @@ StudentRegisterData.findOne({email:item.email, fname: item.fname}, function(err,
           course:req.body.item.course
 
         }
-        if(req.file){
+        // if(req.file){
 
-          item.photo = req.file.originalname
-        }
-        else{
-          item.photo = req.body.item.photo;
-        }
+        //   item.photo = req.file.originalname
+        // }
+        // else{
+        //   item.photo = req.body.item.photo;
+        // }
 
         var user = new StdData(item);
         user.save();
@@ -254,7 +242,7 @@ app.get('/studenthome/stdhome/:id',  (req, res) => {
     });
 })
 
-app.put('/studenthome/stdhome/editprofile', upload.single('image'),(req,res)=>{
+app.put('/studenthome/stdhome/editprofile', (req,res)=>{
   console.log(req.body)
   userid=req.body._id,
   console.log(req.body._id)
@@ -273,14 +261,7 @@ app.put('/studenthome/stdhome/editprofile', upload.single('image'),(req,res)=>{
       techtrain=req.body.techtrain,
       year=req.body.year,
       course=req.body.course
-
-      if(req.file){
-
-        photo = req.file.originalname
-      }
-      else{
-        photo = req.body.photo;
-      }
+    
 
   StudentData.findByIdAndUpdate({"_id":userid},
                               {$set:{"fname":fname,
@@ -296,8 +277,7 @@ app.put('/studenthome/stdhome/editprofile', upload.single('image'),(req,res)=>{
                               "wstatus":wstatus,
                               "techtrain":techtrain,
                               "year":year,
-                              "course":course,
-                              "photo":photo}})
+                              "course":course}})
  .then(function(){
      res.send();
  })
@@ -398,7 +378,7 @@ app.get('/adminhome/students/:id',  (req, res) => {
     });
 })
 
-app.put('/adminhome/students/update',upload.single('image'),verifyToken,(req,res)=>{
+app.put('/adminhome/students/update', verifyToken,(req,res)=>{
   console.log(req.body)
   id=req.body._id,
 
@@ -418,13 +398,13 @@ app.put('/adminhome/students/update',upload.single('image'),verifyToken,(req,res
       year=req.body.year,
       course=req.body.course
 
-      if(req.file){
+      // if(req.file){
 
-        photo = req.file.originalname
-      }
-      else{
-        photo = req.body.photo;
-      }
+      //   photo = req.file.originalname
+      // }
+      // else{
+      //   photo = req.body.photo;
+      // }
 
   StudentData.findByIdAndUpdate({"_id":id},
                               {$set:{"fname":fname,
@@ -440,8 +420,7 @@ app.put('/adminhome/students/update',upload.single('image'),verifyToken,(req,res
                               "wstatus":wstatus,
                               "techtrain":techtrain,
                               "year":year,
-                              "course":course,
-                              "photo":photo}})
+                              "course":course}})
  .then(function(){
      res.send();
  })
@@ -514,7 +493,25 @@ app.delete('/adminhome/employers/remove/:id',verifyToken,(req,res)=>{
  })
 })
  
+app.post('/adminhome/courses/insert', (req,res)=>{
 
+  var item = {
+    cname: req.body.item.cname,
+    duration: req.body.item.duration,
+    fee: req.body.item.fee
+  }
+
+  CourseData.findOne({cname:item.cname}, function(err,item){
+    if(item){
+      res.status(401).send('Course already exists');
+    }
+    else{
+      var course = new CourseData(item);
+      course.save();
+    }
+  })
+
+})
      
   app.listen(port, ()=>{
     console.log("Server is ready at "+port);

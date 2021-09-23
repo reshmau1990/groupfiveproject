@@ -22,9 +22,9 @@ import { UpdateEmployerComponent } from './update-employer/update-employer.compo
 import { NewemployerComponent } from './newemployer/newemployer.component';
 import { StdregComponent } from './stdreg/stdreg.component';
 import { FeePayemtComponent } from './fee-payemt/fee-payemt.component';
-import { SearchComponent } from './search/search.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ViewprofComponent } from './viewprof/viewprof.component';
+import { CoursesComponent } from './courses/courses.component';
 
 const routes: Routes = [
   {
@@ -77,7 +77,7 @@ const routes: Routes = [
       {path: 'employers', canActivate: [AuthGuard],component:EmployersComponent},
       {path: 'employers/update-employer', canActivate: [AuthGuard],component:UpdateEmployerComponent},
       {path: 'employers/newEmployer',canActivate: [AuthGuard], component:NewemployerComponent},
-      {path: 'search', component:SearchComponent}
+      {path: 'courses', component:CoursesComponent}
     ]
   }
 ];

@@ -9,7 +9,6 @@
               *ngIf = 'students && students.length'>
           <thead>
             <tr>
-              <th>Photo</th>
               <th>Name</th>
               <th>Email</th>
               <th>Highest Qualification</th>
@@ -21,11 +20,7 @@
           </thead>
           <tbody>  
               <tr *ngFor='let student of students'>
-                <td><img
-                  [src] = 'student.photo' 
                 
-                  [style.width.px] = 'imageWidth' 
-                  [style.margin.px] = 'imageMargin'></td>
                   <td>{{ student.fname }}</td>
                   <td>{{ student.email }}</td>
                   <td>{{ student.quali }}</td>

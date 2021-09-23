@@ -20,8 +20,7 @@ export class StudentserviceService {
     wstatus:"",
     techtrain:"",
     year:"",
-    course:"",
-    photo:""
+    course:""
   };
   constructor( private http:HttpClient) { }
   

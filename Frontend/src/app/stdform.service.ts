@@ -22,8 +22,7 @@ export class StdformService {
     wstatus:"",
     techtrain:"",
     year:"",
-    course:"",
-    photo:""
+    course:""
   };
 
   constructor(private http:HttpClient,private router: Router) { }

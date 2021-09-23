@@ -1,0 +1,30 @@
+
+<div class="login">
+    <h2 class="login-header">
+        Course Details
+    </h2>
+    <form class="form col-md-6" class="login-container" #addcourse="ngForm" (ngSubmit)="adCourse()">
+        <p>
+            <label for="">Course Name<span style="color:red">*</span></label>
+            <input type="text" name="cname" class="form-control" id="cname" #cname="ngModel" [(ngModel)]="course.cname" placeholder="Course Name" pattern="^[A-Z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*$" required/>
+            <label for="error" class="text-danger" *ngIf="cname.touched && cname.invalid" >Invalid Course Name</label>
+        </p>
+        <p>
+            <label for="">Course Duration<span style="color:red">*</span></label>
+            <input type="number" name="duration" class="form-control" id="duration" #duration="ngModel" [(ngModel)]="course.duration" placeholder="in months" pattern="^[0-9]$" required/>
+            <label for="error" class="text-danger" *ngIf="duration.touched && duration.invalid" >Invalid Field</label>
+        </p>
+        <p>
+            <label for="">Course Fee<span style="color:red">*</span></label>
+            <input type="number" name="fee" class="form-control" id="fee" #fee="ngModel" [(ngModel)]="course.fee" placeholder="in rupees" pattern="^(?:0|[1-9]\d*)(?:\.(?!.*000)\d+)?$" required/>
+            <label for="error" class="text-danger" *ngIf="fee.touched && fee.invalid" >Invalid Field</label>
+        </p>
+        
+        <p>
+            <center><button [disabled]="addcourse.form.invalid">Submit</button></center>
+        </p>
+        
+    </form>
+</div>
+
+

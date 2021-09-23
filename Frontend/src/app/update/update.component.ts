@@ -24,8 +24,8 @@ export class UpdateComponent implements OnInit {
     wstatus:'',
     techtrain:'',
     year:'',
-    course:'',
-    photo:''}
+    course:''
+  }
   
 
   constructor(private router:Router,private studentService:StudentserviceService) { }

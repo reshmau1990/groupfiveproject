@@ -14,7 +14,6 @@ export class ISignup{
         public wstatus:string,
         public techtrain:string,
         public year:string,
-        public course:string,
-        public photo:string){}
+        public course:string){}
  }
  

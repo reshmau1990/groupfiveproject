@@ -28,8 +28,7 @@ export class EditprofileComponent implements OnInit {
     wstatus:'',
     techtrain:'',
     year:'',
-    course:'',
-    photo:''
+    course:''
   };
 
   pageTitle: string = 'STUDENT PROFILE';

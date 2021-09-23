@@ -28,8 +28,7 @@ export class StdformComponent implements OnInit {
     wstatus:'',
     techtrain:'',
     year:'',
-    course:'',
-    photo:''
+    course:''
   };
 
   constructor(private _auth:AuthService,

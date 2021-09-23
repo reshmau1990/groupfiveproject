@@ -28,8 +28,7 @@ export class StudentComponent implements OnInit {
     wstatus:'',
     techtrain:'',
     year:'',
-    course:'',
-    photo:''
+    course:''
   };
 
   pageTitle: string = 'STUDENT DETAILS';

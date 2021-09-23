@@ -9,7 +9,7 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview menu-open">
-          <a routerLink="dashboard" class="nav-link active">
+          <a routerLink="dashboard" *ngIf="_auth.loggedIn()" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -19,7 +19,7 @@
           
         </li>
         <li class="nav-item">
-          <a routerLink="students" class="nav-link">
+          <a routerLink="students" *ngIf="_auth.loggedIn()" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
               Approved Students
@@ -37,15 +37,15 @@
             </p>
           </a>
           </li>
-        <li class="nav-item has-treeview">
-          <a routerLink="search" class="nav-link">
-            <i class="nav-icon fas fa-chart-pie"></i>
-            <p>
-              Search
-              <!-- <i class="right fas fa-angle-left"></i> -->
-            </p>
-          </a>
-           </li>         
+          <li class="nav-item has-treeview">
+            <a routerLink="courses" *ngIf="_auth.loggedIn()" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Add Courses
+                <!-- <i class="right fas fa-angle-left"></i> -->
+              </p>
+            </a>
+             </li>     
       </ul>
     </nav>
 

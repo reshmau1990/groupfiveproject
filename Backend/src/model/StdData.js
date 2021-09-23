@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb+srv://user90:user90@cluster0.ksglb.mongodb.net/STUDENTENRSYSTEM?retryWrites=true&w=majority');
-
+mongoose.connect('mongodb+srv://userone:userone@ictakfiles.at4m7.mongodb.net/ENROLLMENT?retryWrites=true&w=majority');
 const Schema = mongoose.Schema;
 
 const EnrolledSchema = new Schema({
@@ -20,7 +19,6 @@ const EnrolledSchema = new Schema({
          techtrain:String,
          year:String,
          course:String,
-         photo:String,
          value:String,
          id:String
 });

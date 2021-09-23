@@ -113,10 +113,7 @@
                         <label for="error" class="text-danger" *ngIf="course.touched && course.invalid" >Invalid Course</label>
                     </div>
                 </div><br>
-                <div class="row">
-                    <label for="">Photo<span style="color:red">*</span></label>
-                    <input type="file" name="photo" id="photo" #photo="ngModel" [(ngModel)]="student.photo" accept= "image/*" required>
-                </div><br>
+                
                 <button type="submit" class="btn btn-primary" [disabled]="userenrollmentform.form.invalid">Submit</button><br>
             </div>
         </div>

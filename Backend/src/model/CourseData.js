@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://userone:userone@ictakfiles.at4m7.mongodb.net/ENROLLMENT?retryWrites=true&w=majority');
-
 const Schema = mongoose.Schema;
 
-const LoginSchema = new Schema({
-    email : String,
-    password : String
+const CourseSchema = new Schema({
+    cname: String,
+    duration: String,
+    fee : String,
 });
 
-var Studentlogindata = mongoose.model('logindata', LoginSchema);
+var CourseData = mongoose.model('coursedata', CourseSchema);
 
-module.exports = Studentlogindata;
+module.exports = CourseData;

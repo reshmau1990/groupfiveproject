@@ -9,8 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class StudentsComponent implements OnInit {
   pageTitle: string = 'Student Details';
-  imageWidth: number = 50;
-  imageMargin: number = 2;
+
 
   students=[{
     fname:'',
@@ -18,8 +17,8 @@ export class StudentsComponent implements OnInit {
     quali:'',
     poy:'',
     skill:'',
-    course:'',
-    photo:''}]
+    course:''
+  }]
   constructor(private router:Router,private studentService: StudentserviceService, public _auth:AuthService) { }
 
   ngOnInit(): void {

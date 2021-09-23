@@ -30,13 +30,11 @@ export class ViewprofComponent implements OnInit {
     techtrain:'',
     year:'',
     course:'',
-    photo:'',
     value:''
   };
 
   pageTitle: string = 'STUDENT PROFILE';
-  imageWidth: number = 50;
-  imageMargin: number = 2;
+
 
   students=[{
     fname:'',
@@ -54,7 +52,6 @@ export class ViewprofComponent implements OnInit {
     techtrain:'',
     year:'',
     course:'',
-    photo:'',
     value:''}];
  
     constructor(public _auth:AuthService, private studentService: StudentserviceService, private route: ActivatedRoute,

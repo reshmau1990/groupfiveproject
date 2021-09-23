@@ -30,9 +30,9 @@ import { NewemployerComponent } from './newemployer/newemployer.component';
 import { UpdateEmployerComponent } from './update-employer/update-employer.component';
 import { StdregComponent } from './stdreg/stdreg.component';
 import { FeePayemtComponent } from './fee-payemt/fee-payemt.component';
-import { SearchComponent } from './search/search.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ViewprofComponent } from './viewprof/viewprof.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -60,9 +60,9 @@ import { ViewprofComponent } from './viewprof/viewprof.component';
     UpdateEmployerComponent,
     StdregComponent,
     FeePayemtComponent,
-    SearchComponent,
     EditprofileComponent,
-    ViewprofComponent
+    ViewprofComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
